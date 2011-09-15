@@ -1,0 +1,110 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{moreverb}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage[expansion=false]{microtype}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage{util/minted}
+\usepackage{appendix}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+
+\begin{document}
+
+\begin{titlepage}
+\pagestyle{empty}
+
+\vspace{5cm}
+\begin{Large}
+\noindent
+Big Title
+\end{Large}
+\vspace{3cm}
+\begin{LARGE}
+\noindent\\
+Even bigger Title
+\end{LARGE}
+
+\vspace{12cm}
+\begin{large}
+\noindent
+\begin{tabular}{@{}ll}
+FirstName2 LastName2 & StudentNumber2\\
+FirstName2 LastName2 & StudentNumber2\\
+\end{tabular}
+\end{large}
+
+\vspace{2cm}
+\noindent
+\today
+
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\clearpage
+
+\section{Section1}
+
+Foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar , and an example web citation after the line, linux is great (See Picture \ref{figure:aReferenceToAPic}). \cite{web:ExampleWebCitation}
+
+Foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar foobar , and an example article citation after the line. \cite{ExampleArticleCitation}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{img/example.png}
+\caption{A caption text}
+\label{figure:aReferenceToAPic}
+\end{figure}
+
+For more \emph{awesomness} check section \ref{section:RefToSection2}.
+
+\section{Section2}
+\label{section:RefToSection2}
+
+Foobar foobar foobar, reference to example.cc code which is in appendix \ref{appendix:example.cc}.
+
+
+% This will automatically build the reference page with the numbering based on citation order
+% Add the actual citation references that you reference from here to bib.bib
+% Many data sources can generate the bib information automatically!
+\clearpage
+\bibliographystyle{util/numericStyle}
+\bibliography{bib}
+\clearpage
+
+
+\section{Section3}
+\label{section:RefToSection3}
+Foobar foobar foobar.
+
+\noindent
+Noindent example:
+\begin{tabbing}
+Tabbing example1\\
+Tabbing example2
+\end{tabbing}
+
+
+\appendix
+\clearpage
+\section{Appendix: example.cc}
+\label{appendix:example.cc}
+\inputminted{c++}{./example.cc}
+
+\end{document}

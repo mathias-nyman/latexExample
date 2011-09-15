@@ -1,0 +1,13 @@
+#ignore latex-mess
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.bbl
+*.blg
+*.lol
+*.pyg
+*.pdf
+

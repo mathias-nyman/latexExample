@@ -1,0 +1,73 @@
+
+% HOW TO GENERATE: pdflatex *.tex
+
+\documentclass[utf8]{beamer}
+\usetheme{Dresden}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\definecolor{kugreen}{RGB}{50,93,61}
+\usecolortheme[named=kugreen]{structure}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphics}
+\usepackage{fix-cm}
+
+\title{This is an example latex pdf document}
+\subtitle{Example subtitle}
+\author{
+    FirstName1~LastName1
+    \and
+    FirstName2~LastName2
+}
+\date{1.1.2011}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Title1}
+    \begin{itemize}
+        \item Item1
+        \begin{itemize}
+            \item Subitem1, dots: \ldots, arrow: $\Rightarrow$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Title2, example pic}
+\begin{center}
+    \includegraphics[height=6cm]{img/example.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Title3, pic and text}
+    \begin{itemize}
+        \item Foobar foobar foobar  foobar  foobar  foobar  foobar 
+    \end{itemize}
+\begin{center}
+    \includegraphics[height=6cm]{img/example.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Questions?}
+\begin{center}
+\fontsize{80}{80}\selectfont ?
+\end{center}
+\end{frame}
+
+\end{document}
+
