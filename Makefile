@@ -1,4 +1,3 @@
-
 #----------------------------------------------
 # A simple Makefile for a simple job
 #----------------------------------------------
@@ -24,8 +23,10 @@ latex: $(PDFS)
 		print `. util/env.sh; pdflatex -shell-escape $$f`; \
 		print `. util/env.sh; pdflatex -shell-escape $$f`; \
 		print `/bin/rm -f $$n.toc`; \
+		print `/bin/rm -f $$n.snm`; \
 		print `/bin/rm -f $$n.pyg`; \
 		print `/bin/rm -f $$n.out`; \
+		print `/bin/rm -f $$n.nav`; \
 		print `/bin/rm -f $$n.log`; \
 		print `/bin/rm -f $$n.blg`; \
 		print `/bin/rm -f $$n.bbl`; \
