@@ -17,12 +17,19 @@ latex: $(PDFS)
 	@ echo "Done."
 
 %.pdf:  %.tex
-	@ echo $< | tr ' ' '\n' | perl -nle '{ $$f=$$n=$$_; $$n=~s/\..*$$//; \
+	@ echo $< | tr ' ' '\n' | perl -nle '{ $$f=$$n=$$b=$$_; $$n=~s/\..*$$//; \
 		print `. util/env.sh; pdflatex -shell-escape $$f`; \
 		print `. util/env.sh; bibtex $$n`;                 \
 		print `. util/env.sh; pdflatex -shell-escape $$f`; \
 		print `. util/env.sh; pdflatex -shell-escape $$f`; \
-		print `. util/env.sh; pdflatex -shell-escape $$f`; }'
+		print `. util/env.sh; pdflatex -shell-escape $$f`; \
+		print `/bin/rm -f $$n.toc`; \
+		print `/bin/rm -f $$n.pyg`; \
+		print `/bin/rm -f $$n.out`; \
+		print `/bin/rm -f $$n.log`; \
+		print `/bin/rm -f $$n.blg`; \
+		print `/bin/rm -f $$n.bbl`; \
+		print `/bin/rm -f $$n.aux`; }'
 
 install:
 	@ echo "Installing pygments from source"
